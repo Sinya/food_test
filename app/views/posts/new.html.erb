@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+	<%= render "shared/form_errors", record: @post %>
+
+	<div class="field">
+		<%= f.label :content %>
+		<%= f.text_field :content %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Post", class: "btn btn-primary" %>
+	</div>
+	
+<% end %>

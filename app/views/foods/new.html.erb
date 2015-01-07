@@ -1,0 +1,20 @@
+<h1>Food New</h1>
+
+
+  <%= form_for @food do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+  
+	<%= f.label :category %>
+	<%= f.text_field :category %><br>
+
+	<%= f.label :due %>
+	<%= f.date_field :due %><br>
+    
+	
+	<div>
+		<%= f.submit "New Food!", class:"btn btn-primary" %>
+	</div>
+
+  <% end %>

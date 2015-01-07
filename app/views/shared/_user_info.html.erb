@@ -1,0 +1,11 @@
+	<h1>
+	  <%= gravatar_for user %>
+	  <%= user.name %>
+	</h1>
+
+	<%= pluralize user.posts.count, "posts" %><br>
+
+	<p>
+	  <strong>Email:</strong>
+	  <%= user.email %>
+	</p>

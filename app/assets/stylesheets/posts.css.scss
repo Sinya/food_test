@@ -1,0 +1,36 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* posts */
+
+.post {
+	list-style: none;
+	margin: 10px 0 0 0;
+
+	li {
+		padding: 10px 0;
+		border-top: 1px solid #e8e8e8;
+	}
+}
+
+.content {
+	display: block;
+}
+
+.timestamp {
+	color: red;
+}
+
+.new_post {
+	textarea {
+		width: 85%;
+	}
+	input[type=submit] {
+		margin-bottom: 10px;
+	}
+}
+
+.form {
+	margin: 60px;
+}
