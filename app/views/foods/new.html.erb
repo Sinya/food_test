@@ -4,10 +4,10 @@
   <%= form_for @food do |f| %>
 
 	<%= f.label :name %>
-	<%= f.text_field :name %><br>
+	<%= f.text_field :name, :required => true %><br>
   
 	<%= f.label :category %>
-	<%= f.text_field :category %><br>
+	<%= f.text_field :category, :required => true %><br>
 
 	<%= f.label :due %>
 	<%= f.date_field :due %><br>
@@ -18,3 +18,20 @@
 	</div>
 
   <% end %>
+
+
+  	<div class="span8">
+		<h1>冰箱</h1>
+		<ul class="foods">
+			 <%= render partial: "shared/food", collection: @foods %> 
+		</ul>
+	</div>
+
+
+	<div class="span8">
+		<h1>要求</h1>
+			<%= form_tag ask_for_food_path do -%>
+			    <%= text_area :myform, :comments, :cols => '40', :rows => '5' %>
+			    <%= submit_tag "Submit" %>
+			<% end %>
+	</div>

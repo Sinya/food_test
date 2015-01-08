@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   root to:'root#home'
   get '/sandbox', to: 'root#sandbox' if Rails.env.development?
 
+  post '/ask_for_food' => 'foods#ask_for_food', as: :ask_for_food
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

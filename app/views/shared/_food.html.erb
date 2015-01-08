@@ -1,0 +1,6 @@
+	<li class="food">
+		<%= content_tag :span, food.name, class: "name" %>
+		<%= content_tag :span, food.category, class: "name" %>
+		<%= content_tag :span, food.due, class: "name" %>
+		<%= content_tag :span, "fooded #{time_ago_in_words(food.created_at)} ago", class: "timestamp" %>
+	</li>
