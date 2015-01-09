@@ -11,24 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107121049) do
+ActiveRecord::Schema.define(version: 20150109175305) do
 
-  create_table "followings", force: true do |t|
-    t.integer  "from_id"
-    t.integer  "to_id"
+  create_table "foods", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.date     "due"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "followings", ["from_id", "to_id"], name: "index_followings_on_from_id_and_to_id", unique: true
-  add_index "followings", ["from_id"], name: "index_followings_on_from_id"
-  add_index "followings", ["to_id"], name: "index_followings_on_to_id"
-
-  create_table "foods", force: true do |t|
-    t.string   "name"
-    t.string   "category"
-    t.integer  "user_id"
-    t.date     "due"
+  create_table "friendships", force: true do |t|
+    t.integer  "own_id"
+    t.integer  "friend_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,33 +35,15 @@ ActiveRecord::Schema.define(version: 20150107121049) do
     t.datetime "updated_at"
   end
 
-  create_table "news", force: true do |t|
-    t.string   "title"
-    t.string   "category"
-    t.datetime "time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.integer  "user_id"
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
-
   create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
     t.string   "name"
-    t.string   "email"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "session_token"
+    t.string   "email"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true
 
 end

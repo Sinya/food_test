@@ -1,23 +1,26 @@
 Rails.application.routes.draw do
 
+  get 'food/new'
+  get 'food/show'
+  get 'food/destroy'
+  get 'food/create'
+
+
   resources :users
-  resources :posts
-  resources :foods
-  resources :news
-  resource :session, only: [ :new, :create, :destroy ]
-  resources :users do
-    get 'followers', on: :member
-    get 'followed_users', on: :member
-    post 'follow', on: :member
-    delete 'unfollow', on: :member
-  end
+  resources :sessions, only: [:create, :destroy]
 
-  # get 'root/home'
-  # This maps to the root#home action
-  root to:'root#home'
-  get '/sandbox', to: 'root#sandbox' if Rails.env.development?
+  get 'sessions/create'
+  get 'sessions/destroy'
 
-  post '/ask_for_food' => 'foods#ask_for_food', as: :ask_for_food
+  get 'auth/:provider/callback', to: 'sessions#create' # 登入
+  get 'auth/failure', to: redirect('/') # 有error
+  get 'signout', to: 'sessions#destroy', as: 'signout' # 登出
+
+
+
+  root 'root#home'
+  get 'user/show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,25 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Add bootstrap for pretty UI
-gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
-# Use fake info for testing
-gem 'faker'
-# To Use ActiveModel has secure password
-gem 'bcrypt', '~> 3.1.0'
-# 台灣各新聞網站新聞解析器
-gem 'taiwanese_news_parser'
-
+# gem 'sqlite3' 
+# gem 'pg' 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,6 +27,22 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'omniauth-facebook'
+
+gem "koala", '~> 1.10.0rc'
+
+gem 'fb_graph'
+
+
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,4 +54,5 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 
