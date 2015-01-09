@@ -1,17 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div id="UserName">Hello <%=current_user.name%> :)</div>
 
-	<aside class="span4">
-		<section>
-			<%= render "shared/user_info", user: @user %>
-		</section>
-		<section>
-			<%= render "shared/user_actions", user: @user %>
-		</section>
-	</aside>
+<%=@profile%>
 
-	<div class="span8">
-		<h1>Posts</h1>
-		<ul class="posts">
-			<%= render partial: "shared/post", collection: @posts %> 
-		</ul>
-	</div>
+<%=@friends%>
+
+
+<%= link_to 'New Food', food_new_path %>
