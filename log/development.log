@@ -35087,6 +35087,7 @@ Migrating to CreateIngredients (20150109175305)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "ingredients" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-01-09 17:54:42.473792"], ["name", "yellow sugar"], ["updated_at", "2015-01-09 17:54:42.473792"]]
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[36mIngredient Load (31.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+<<<<<<< HEAD
 
 
 Started GET "/users/4" for 127.0.0.1 at 2015-01-10 02:20:05 +0800
@@ -35254,3 +35255,5 @@ ActiveRecord::RecordNotFound (Couldn't find User with 'id'=4):
   Rendered /Users/SinyaPeng/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /Users/SinyaPeng/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+=======
+>>>>>>> f5b4b5fb01a8a14d6b80d8f2acc015e4cc1e2319
